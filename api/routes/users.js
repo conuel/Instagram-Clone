@@ -1,6 +1,6 @@
 const User = require("../models/User");
 const router = require("express").Router()
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const {verifyToken, verifyTokenAndAuthorization} = require("./verifyToken")
 
 
@@ -45,7 +45,7 @@ router.delete("/:id", verifyTokenAndAuthorization,async (req, res) => {
   });
 
 
- // get a user
+//  get a user
 router.get("/", async (req, res) => {
     const userId = req.query.userId;
     try {
@@ -56,6 +56,22 @@ router.get("/", async (req, res) => {
       res.status(500).json(err);
     }
   }); 
+
+
+
+
+//fake get a user 
+// router.get("/", async (req, res) => {
+  // const userId = "625926b743c39dc99fdb3805";
+  // try {
+  //   const user = await User.findById(userId)
+  //   const { password, updatedAt, ...other } = user._doc;
+  //   res.status(200).json(other);
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+//   res.status(200).json({"other": "kjhbnkj"});
+// }); 
 
 
   // get Users

@@ -110,7 +110,7 @@ const Post = ({post}) => {
 
     const likePost = async(option) => {
         const res = await userRequest.put(`/post/${post._id}/like`, {userId: user._id})
-        // setLike(res.data.likes)
+        console.log(res.data)
         if(option === "like"){
             setLike(true)
             setLikes(prevState => prevState + 1)

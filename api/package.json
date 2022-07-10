@@ -1,6 +1,9 @@
 {
   "name": "instagram-api",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.15.0"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +12,7 @@
   "author": "Chinedu",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.0",
